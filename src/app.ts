@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { json } from 'body-parser';
-import authRoutes from './routes/authRoutes.js'
+import authRoutes from './routes/authRoutes'
 
 const app = express();
 

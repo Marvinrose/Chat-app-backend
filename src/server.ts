@@ -1,8 +1,9 @@
 import http from 'node:http';
 import dotenv from 'dotenv';
 import { Server } from 'socket.io';
-import app from './app.js';
-import setupSocket from './sockets/socketHandler.js';
+import app from './app';
+import setupSocket from './sockets/socketHandler';
+import { connectDB } from  './db';
 
 dotenv.config();
 
@@ -18,6 +19,16 @@ const io = new Server(server, {
 
 setupSocket(io);
 
-server.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+async function startServer() {
+  await connectDB(); // 👈 Connect to DB first
+
+  server.listen(PORT, () => {
+    console.log(`🚀 Server running on http://localhost:${PORT}`);
+  });
+}
+
+startServer();
+
+// server.listen(PORT, () => {
+//   console.log(`Server running on http://localhost:${PORT}`);
+// });

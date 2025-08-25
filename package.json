@@ -1,13 +1,12 @@
 {
   "name": "nodejs-chat-backend",
   "version": "1.0.0",
-  "type": "module",
   "description": "Backend chat application server using Node.js, Express, and Socket.IO",
-  "main": "server.js",
+  "main": "dist/server.js",
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
-    "start": "nodemon --exec npx ts-node src/server.ts",
-    "build": "tsc",
+  "start": "node dist/server.js",
+  "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

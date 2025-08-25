@@ -1,10 +1,15 @@
-import express from 'express';
-import cors from 'cors';
-import { json } from 'body-parser';
-import authRoutes from './routes/authRoutes.js';
-const app = express();
-app.use(cors());
-app.use(json());
-app.use('/api/auth', authRoutes);
-export default app;
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const cors_1 = __importDefault(require("cors"));
+const body_parser_1 = require("body-parser");
+const authRoutes_1 = __importDefault(require("./routes/authRoutes"));
+const app = (0, express_1.default)();
+app.use((0, cors_1.default)());
+app.use((0, body_parser_1.json)());
+app.use('/api/auth', authRoutes_1.default);
+exports.default = app;
 //# sourceMappingURL=app.js.map
