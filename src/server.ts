@@ -19,6 +19,11 @@ const io = new Server(server, {
 
 setupSocket(io);
 
+app.get("/", (req, res) => {
+  res.send("✅ Chat App Backend is running!");
+});
+
+
 async function startServer() {
   await connectDB(); // 👈 Connect to DB first
 
@@ -29,6 +34,4 @@ async function startServer() {
 
 startServer();
 
-// server.listen(PORT, () => {
-//   console.log(`Server running on http://localhost:${PORT}`);
-// });
+
